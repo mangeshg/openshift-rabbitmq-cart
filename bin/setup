@@ -5,11 +5,11 @@ set -u
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
 
-if [ -z `type -t erl` ]
-then
-    client_error 'Erlang must be installed. See https://github.com/commonsmachinery/openshift-rabbitmq-cart#installation'
-    exit 1
-fi    
+#if [ -z `type -t erl` ]
+#then
+#    client_error 'Erlang must be installed. See https://github.com/commonsmachinery/openshift-rabbitmq-cart#installation'
+#    exit 1
+#fi    
     
 
 # TODO: use version argument or manifest file
