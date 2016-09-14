@@ -3,7 +3,7 @@
 set -e
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
-
+export PATH=$PATH:$ERLANG_HOME 
 bindir="$OPENSHIFT_RABBITMQ_DIR/versions/$OPENSHIFT_RABBITMQ_VERSION/rabbitmq/sbin"
 
 if [ ! -x "$bindir/rabbitmq-server" ]
@@ -24,7 +24,9 @@ function status() {
 
 function start() {
     echo "Starting RabbitMQ cartridge"
+    echo "Erlang Home $ERLANG_HOME" 
 
+    export PATH=$PATH:$ERLANG_HOME 
     if is_cartridge_running
     then
         echo "RabbitMQ is already running"
@@ -32,6 +34,7 @@ function start() {
     fi
 
     # Starting with -detached doesn't give us a pid file...
+    
     "$bindir/rabbitmq-server" </dev/null >/dev/null 2>&1 &
     
     if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
