@@ -3,7 +3,7 @@
 set -e
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
-export PATH=$PATH:$ERLANG_HOME 
+export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin 
 bindir="$OPENSHIFT_RABBITMQ_DIR/versions/$OPENSHIFT_RABBITMQ_VERSION/rabbitmq/sbin"
 
 if [ ! -x "$bindir/rabbitmq-server" ]
@@ -25,8 +25,8 @@ function status() {
 function start() {
     echo "Starting RabbitMQ cartridge"
     echo "Erlang Home $ERLANG_HOME" 
+    echo "Path $PATH" 
 
-    export PATH=$PATH:$ERLANG_HOME 
     if is_cartridge_running
     then
         echo "RabbitMQ is already running"
