@@ -4,12 +4,12 @@ set -e
 set -u
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
-
-#if [ -z `type -t erl` ]
-#then
-#    client_error 'Erlang must be installed. See https://github.com/commonsmachinery/openshift-rabbitmq-cart#installation'
-#    exit 1
-#fi    
+export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin
+if [ -z `type -t erl` ]
+then
+    client_error 'Erlang must be installed. See https://github.com/commonsmachinery/openshift-rabbitmq-cart#installation'
+    exit 1
+fi    
     
 
 # TODO: use version argument or manifest file
@@ -109,7 +109,7 @@ EOF
 )
 
 # Enable the management plugin
-#"$destdir/rabbitmq/sbin/rabbitmq-plugins" enable rabbitmq_management
+"$destdir/rabbitmq/sbin/rabbitmq-plugins" enable rabbitmq_management
 
 # Set up environment that depends on the version
 set_env_var OPENSHIFT_RABBITMQ_PATH_ELEMENT "$destdir/rabbitmq/sbin" "$envdir"
