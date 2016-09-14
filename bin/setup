@@ -53,7 +53,7 @@ function get_source() {
         cd "$OPENSHIFT_TMP_DIR"
         if [ -f "$tgz" ]
         then
-            if echo "$md5 $tgz" | md5sum -c --quiet
+            if echo "$md5  $tgz" | md5sum -c --quiet
             then
                 client_message "Using previously downloaded $tgz"
                 return
@@ -94,7 +94,7 @@ get_source "$rabbitmq_tgz" "$rabbitmq_url" "$rabbitmq_md5"
 # Env vars specific for running Erlang.  The rest of the config is
 # handled with cartridge env/* to allow easy user overrides.
 
-ERL_CRASH_DUMP=/dev/null
+ERL_CRASH_DUMP=$ERLANG_HOME/dump
 export ERL_CRASH_DUMP
 EOF
 
