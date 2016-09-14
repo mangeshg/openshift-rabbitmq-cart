@@ -34,9 +34,10 @@ function start() {
     fi
 
     # Starting with -detached doesn't give us a pid file...
+    echo "Starting Rabbit MQ Server " 
+    "$bindir/rabbitmq-server" <$ERLANG_HOME/dump>$ERLANG_HOME/dump 2>&1 &
     
-    "$bindir/rabbitmq-server" </dev/null >/dev/null 2>&1 &
-    
+    echo "Started Rabbit MQ Server " 
     if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
     then
         client_error "Error waiting for RabbitMQ server to start"
