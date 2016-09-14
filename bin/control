@@ -38,11 +38,11 @@ function start() {
     "$bindir/rabbitmq-server" <$ERLANG_HOME/dump>$ERLANG_HOME/dump 2>&1 &
     
     echo "Started Rabbit MQ Server :: $bindir" 
-    if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
-    then
-        client_error "Error waiting for RabbitMQ server to start"
-        return 1
-    fi
+    #if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
+    #then
+    #    client_error "Error waiting for RabbitMQ server to start"
+    #    return 1
+    #fi
 
     return 0
 }
