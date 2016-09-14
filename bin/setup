@@ -13,12 +13,12 @@ fi
     
 
 # TODO: use version argument or manifest file
-version=3.2.4
+version=3.5.7
 
-rabbitmq_tgz="rabbitmq-server-generic-unix-3.2.4.tar.gz"
-rabbitmq_dir="rabbitmq_server-3.2.4"
-rabbitmq_url="https://www.rabbitmq.com/releases/rabbitmq-server/v3.2.4/$rabbitmq_tgz"
-rabbitmq_md5="2c3788f9900b94a083bbbc705c87e2ca"
+rabbitmq_tgz="rabbitmq-server-generic-unix-3.5.7.tar.gz"
+rabbitmq_dir="rabbitmq_server-3.5.7"
+rabbitmq_url="https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.7/$rabbitmq_tgz"
+rabbitmq_md5="da225c44d3e0371a2cdb6497443352ea"
 
 envdir="$OPENSHIFT_RABBITMQ_DIR/env"
 
