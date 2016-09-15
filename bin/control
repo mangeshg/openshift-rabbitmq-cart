@@ -4,8 +4,7 @@ set -e
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
 export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin 
-export ERL_EPMD_PORT=14099
-export ERL_EPMD_ADDRESS=127.8.83.2
+export ERL_EPMD_ADDRESS=$OPENSHIFT_DIY_IP
 bindir="$OPENSHIFT_RABBITMQ_DIR/versions/$OPENSHIFT_RABBITMQ_VERSION/rabbitmq/sbin"
 
 if [ ! -x "$bindir/rabbitmq-server" ]
@@ -37,8 +36,8 @@ function start() {
 
     # Starting with -detached doesn't give us a pid file...
     echo "Starting Rabbit MQ Server " 
+    echo "Erlang IP :: $ERL_EPMD_ADDRESS"
     "$bindir/rabbitmq-server" <$ERLANG_HOME/dump>$ERLANG_HOME/dump 2>&1 &
-    
     echo "Started Rabbit MQ Server :: $bindir" 
     if ! "$bindir/rabbitmqctl" wait "$RABBITMQ_PID_FILE"
     then
