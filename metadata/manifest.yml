@@ -52,6 +52,12 @@ Endpoints:
         Backend:       ''
       - Frontend:      'api'
         Backend:       'api'
+  - Private-IP-Name: BROKER_HOST
+    Private-Port-Name: ERLANG_BROKER_PORT
+    Private-Port: 14099
+    Public-Port-Name: ERLANG_BROKER_PROXY_PORT
+    Protocols:
+     - tcp
 Publishes:
   publish-amqp-url:
     Type: "ENV:NET_TCP:amqp"
