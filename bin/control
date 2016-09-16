@@ -5,6 +5,7 @@ set -e
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
 export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin 
 export ERL_EPMD_ADDRESS=$OPENSHIFT_DIY_IP
+export RABBITMQ_USE_LONGNAME=true
 bindir="$OPENSHIFT_RABBITMQ_DIR/versions/$OPENSHIFT_RABBITMQ_VERSION/rabbitmq/sbin"
 
 if [ ! -x "$bindir/rabbitmq-server" ]
