@@ -114,7 +114,4 @@ EOF
 # Set up environment that depends on the version
 set_env_var OPENSHIFT_RABBITMQ_PATH_ELEMENT "$destdir/rabbitmq/sbin" "$envdir"
 set_env_var OPENSHIFT_RABBITMQ_VERSION "$version" "$envdir"
-
-export OPENSHIFT_RABBITMQ_PATH_ELEMENT "$destdir/rabbitmq/sbin" "$envdir"
-export OPENSHIFT_RABBITMQ_VERSION "$version" "$envdir"
 touch "$readyfile"
