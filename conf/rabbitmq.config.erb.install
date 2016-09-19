@@ -17,7 +17,7 @@
    %% By default, RabbitMQ will listen on all interfaces, using
    %% the standard (reserved) AMQP port.
    %%
-    {tcp_listeners, [15672]},
+    {tcp_listeners, [5672]},
 
    %% To listen on a specific interface, provide a tuple of {IpAddress, Port}.
    %% For example, to listen only on localhost for both IPv4 and IPv6:
@@ -262,7 +262,7 @@
    %%             {ssl_opts, [{cacertfile, "/path/to/cacert.pem"},
    %%                         {certfile,   "/path/to/cert.pem"},
    %%                         {keyfile,    "/path/to/key.pem"}]}]},
-   {listener, [{port, 25672},
+   {listener, [{port, 15672},
                {ip, "<%= ENV['OPENSHIFT_RABBITMQ_BROKER_HOST'] %>"}
               ]}
                , {redirect_old_port, false}
