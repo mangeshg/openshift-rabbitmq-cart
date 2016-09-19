@@ -36,8 +36,8 @@ Cart-Data:
   Type: cart_data
   Description: AMQP broker URL
 Endpoints:
-  - Private-IP-Name: BROKER_HOST 
-    Private-Port-Name: BROKER_PORT
+  - Private-IP-Name: HOST 
+    Private-Port-Name: PORT
     Private-Port: 8080
     Public-Port-Name: BROKER_PROXY_PORT
     Public-Port: 25808
