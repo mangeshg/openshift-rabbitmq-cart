@@ -1,13 +1,14 @@
 #!/bin/bash
 
 set -e
+source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
+echo "Here"
 version=3.5.7
 envdir="$OPENSHIFT_RABBITMQ_DIR/env"
 destdir="$OPENSHIFT_RABBITMQ_DIR/versions/$version"
 export OPENSHIFT_RABBITMQ_PATH_ELEMENT=$destdir/rabbitmq/sbin 
 export OPENSHIFT_RABBITMQ_VERSION=$version
 
-source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
 export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin 
 export ERL_EPMD_ADDRESS=$OPENSHIFT_ERL_IP
 export RABBITMQ_USE_LONGNAME=true
