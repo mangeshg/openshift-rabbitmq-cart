@@ -76,6 +76,7 @@ function get_source() {
             exit 1
         fi
     )
+echo "Getting out of Get Source"
 }
 
 get_source "$rabbitmq_tgz" "$rabbitmq_url" "$rabbitmq_md5"
