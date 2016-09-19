@@ -2,8 +2,8 @@
 
 set -e
 version=3.5.7
-envdir="$OPENSHIFT_RABBITMQ_DIR/env
-destdir="$OPENSHIFT_RABBITMQ_DIR/versions/$version
+envdir="$OPENSHIFT_RABBITMQ_DIR/env"
+destdir="$OPENSHIFT_RABBITMQ_DIR/versions/$version"
 export OPENSHIFT_RABBITMQ_PATH_ELEMENT=$destdir/rabbitmq/sbin 
 export OPENSHIFT_RABBITMQ_VERSION=$version
 
