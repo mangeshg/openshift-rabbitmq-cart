@@ -38,7 +38,7 @@ Cart-Data:
 Endpoints:
   - Private-IP-Name: BROKER_HOST 
     Private-Port-Name: BROKER_PORT
-    Private-Port: 5672
+    Private-Port: 8080
     Public-Port-Name: BROKER_PROXY_PORT
     Protocols:
      - amqp
