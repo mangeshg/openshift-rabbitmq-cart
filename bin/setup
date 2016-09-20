@@ -112,6 +112,7 @@ EOF
 
 # Enable the management plugin
 echo "Calling rabbitmq-plugins"
+echo "RABBITMQ_NODENAME = $RABBITMQ_NODENAME"
 "$destdir/rabbitmq/sbin/rabbitmq-plugins" enable rabbitmq_management
 
 echo "Finish Calling rabbitmq-plugins"
