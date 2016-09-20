@@ -263,7 +263,7 @@
    %%                         {certfile,   "/path/to/cert.pem"},
    %%                         {keyfile,    "/path/to/key.pem"}]}]},
    {listener, [{port, 15672},
-               {ip, "<%= ENV['OPENSHIFT_DIY_IP'] %>"}
+               {ip, "<%= ENV['OPENSHIFT_ERL_IP'] %>"}
               ]}
                , {redirect_old_port, false}
    %% Configure how long aggregated data (such as message rates and queue
