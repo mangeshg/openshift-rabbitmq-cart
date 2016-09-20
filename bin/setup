@@ -113,6 +113,13 @@ EOF
 # Enable the management plugin
 echo "Calling rabbitmq-plugins"
 echo "RABBITMQ_NODENAME = $RABBITMQ_NODENAME"
+echo "RABBITMQ_HOME= $RABBITMQ_HOME"
+echo "RABBITMQ_CTL_ERL_ARGS = $RABBITMQ_CTL_ERL_ARGS"
+echo "CLEAN_BOOT_FILE = $CLEAN_BOOT_FILE"
+echo "RABBITMQ_PLUGINS_DIR= $RABBITMQ_PLUGINS_DIR"
+echo "RABBITMQ_NODENAME= $RABBITMQ_NODENAME"
+echo "RABBITMQ_ENABLED_PLUGINS_FILE= $RABBITMQ_ENABLED_PLUGINS_FILE"
+
 "$destdir/rabbitmq/sbin/rabbitmq-plugins" enable rabbitmq_management
 
 echo "Finish Calling rabbitmq-plugins"
