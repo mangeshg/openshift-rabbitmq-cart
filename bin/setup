@@ -4,7 +4,7 @@ set -e
 set -u
 
 source "$OPENSHIFT_CARTRIDGE_SDK_BASH"
-export ERLANG_HOME=$OPENSHIFT_DATA_DIR/erl_home
+export ERLANG_HOME=$OPENSHIFT_DATA_DIR/erlang_home
 export PATH=$PATH:$ERLANG_HOME:$ERLANG_HOME/bin
 export ERL_EPMD_ADDRESS=$OPENSHIFT_ERL_IP
 export RABBITMQ_ERL_INTERFACE=`echo $OPENSHIFT_ERL_IP | sed -e "s/\./\,/g"`
