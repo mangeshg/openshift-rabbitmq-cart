@@ -234,7 +234,7 @@
    %% http://www.rabbitmq.com/nettick.html for further details.
    %%
    %% {net_ticktime, 60}
-      {inet_dist_use_interface, {RABBITMQ_ERL_INTERFACE}}
+      {inet_dist_use_interface, {127,6,250,1}}
   ]},
 
  %% ----------------------------------------------------------------------------
